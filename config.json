@@ -1,6 +1,5 @@
 {
-  "glogchainWebAddr": ":8000",
+  "glogchainWebAddr": "0.0.0.0:8000",
   "tmspAddr": "tcp://0.0.0.0:46658",
   "hugoPostPath": "/home/faddat/billy"
 }
-
