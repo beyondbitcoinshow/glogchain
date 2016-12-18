@@ -4,11 +4,11 @@ import (
 	"encoding/binary"
 	"fmt"
 
+	"github.com/beyondbitcoinshow/glogchain/blog"
+	"github.com/beyondbitcoinshow/glogchain/protocol"
 	. "github.com/tendermint/go-common"
 	"github.com/tendermint/tmsp/types"
-	"glogchain/protocol"
 	"log"
-	"glogchain/blog"
 )
 
 type GlogChainApp struct {
@@ -32,14 +32,14 @@ func (app *GlogChainApp) AppendTx(tx []byte) types.Result {
 	// tx is json string, need to convert to text and then parse into json object
 	jsonstring := string(tx[:])
 
-	obj , err := protocol.UnMarshal(jsonstring)
+	obj, err := protocol.UnMarshal(jsonstring)
 
 	if err != nil {
 		log.Fatal(err)
 		return types.ErrEncodingError
 	}
 
-	switch v:=obj.(type) {
+	switch v := obj.(type) {
 	case protocol.PostOperation:
 		var objPostOperation protocol.PostOperation
 

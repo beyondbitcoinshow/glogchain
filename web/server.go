@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 	"time"
-	"glogchain/config"
+	"github.com/beyondbitcoinshow/glogchain/config"
 )
 
 // simple web server

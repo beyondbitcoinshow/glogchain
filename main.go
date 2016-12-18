@@ -3,10 +3,10 @@ package main
 import (
 	"flag"
 
+	"github.com/beyondbitcoinshow/glogchain/config"
+	"github.com/beyondbitcoinshow/glogchain/web"
 	. "github.com/tendermint/go-common"
 	"github.com/tendermint/tmsp/server"
-	"glogchain/web"
-	"glogchain/config"
 )
 
 func main() {
@@ -20,7 +20,6 @@ func main() {
 	if err != nil {
 		Exit(err.Error())
 	}
-
 
 	// start web server on port 8000
 	go web.StartWebServer()
